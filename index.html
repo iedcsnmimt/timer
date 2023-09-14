@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEDC SNMIMT TIMER| WEBSITE</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    
+      
+    <header>
+        <h1>Welcome to IEDC DASHBOARD LAUCNH</h1>
+       
+    </header>
+
+    <main>
+
+<div class="clock-wrap">
+    <div class="clock pro-0">
+      <span class="count">45</span> <!-- Set the default timer value to 45 -->
+    </div>
+  </div>
+  <div class="action">
+    <!-- Add a "Start" button -->
+    <button id="startButton" onclick="startCountdown()">Start Countdown</button>
+  </div>
+  
+  <script>
+    // Function to start the countdown timer
+    function startCountdown() {
+      let seconds = 45; // Set the initial timer value to 45 seconds
+  
+      const countdownInterval = setInterval(() => {
+        seconds--;
+  
+        // Update the countdown display
+        const countdownDisplay = document.querySelector(".count");
+        countdownDisplay.textContent = seconds;
+  
+        if (seconds <= 0) {
+          // Timer has expired, redirect to 'https://inst.me'
+          clearInterval(countdownInterval); // Stop the countdown
+          window.location.href = "https://iedcsnmimt.vercel.app";
+        }
+      }, 1000); // Update every 1 second
+  
+      // Disable the "Start" button when the countdown begins
+      const startButton = document.getElementById("startButton");
+      if (startButton) {
+        startButton.disabled = true;
+      }
+    }
+  </script>
+  
+</main>
+
+<footer>
+    <p>&copy; IEDC WEBSITE TIMER</p>
+    
+</footer>
+</body>
+</html>
